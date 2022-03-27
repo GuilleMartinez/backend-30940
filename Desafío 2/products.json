@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1,
+		"title": "in laboris laborum sit nulla",
+		"price": 613,
+		"thumbnail": "culpa ex voluptate"
+	},
+	{
+		"id": 2,
+		"title": "exercitation duis mollit irure eu",
+		"price": 980,
+		"thumbnail": "occaecat nisi sunt"
+	},
+	{
+		"id": 3,
+		"title": "et nulla magna elit in",
+		"price": 957,
+		"thumbnail": "cupidatat magna reprehenderit"
+	},
+	{
+		"id": 4,
+		"title": "Lorem officia cillum esse anim",
+		"price": 804,
+		"thumbnail": "deserunt magna commodo"
+	},
+	{
+		"id": 5,
+		"title": "culpa mollit dolor esse ea",
+		"price": 951,
+		"thumbnail": "non elit ex"
+	},
+	{
+		"id": 6,
+		"title": "new product",
+		"price": 500,
+		"thumbnail": "thumbnail"
+	}
+]
