@@ -1,3 +1,5 @@
+"use strict";
+
 const thumbnailSelector = document.getElementById("thumbnail-selector");
 
 thumbnailSelector.addEventListener("change", createThubnailInput);

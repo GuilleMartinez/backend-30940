@@ -1,8 +1,10 @@
+"use strict";
+
 const express = require("express");
 
 const app = express();
 const port = 8080;
-const { productRouter } = require("./routes/products");
+const productRouter = require("./routes/products");
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));

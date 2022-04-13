@@ -1,3 +1,5 @@
+"use strict";
+
 const { Router } = require("express");
 const multer = require("multer");
 const fs = require("fs");
@@ -26,6 +28,8 @@ const products = [
 	},
 ];
 
+let productsCount = products.length;
+
 // Request all products
 router.get("/", (req, res) => res.json(products));
 
@@ -34,7 +38,7 @@ router.post("/", upload.single("thumbnail"), (req, res) => {
 	const { body, file } = req;
 
 	const product = {
-		id: products.length + 1,
+		id: ++productsCount,
 		title: body.title,
 		price: Number(body.price),
 		thumbnail: file ? file.filename : body.thumbnail,
@@ -87,4 +91,4 @@ router.delete("/:id", (req, res) => {
 	return res.json({ deleted: deleted });
 });
 
-module.exports = { productRouter: router };
+module.exports = router;
