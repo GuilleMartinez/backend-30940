@@ -1,0 +1,19 @@
+<form method="POST" action="/productos" enctype="multipart/form-data" id="add-product-form">
+
+  <label for="product-title">Title</label>
+  <input type="text" name="title" id="product-title" required />
+
+  <label for="product-price">Price</label>
+  <input type="number" name="price" id="product-price" required />
+
+  <label for="thumbnail-selector">Thubnail Type</label>
+  <select required id="thumbnail-selector">
+    <option data-type="" value="" disabled selected>Select a type</option>
+    <option data-type="file" value="thumbnail-file">Image File</option>
+    <option data-type="url" value="thumbnail-url">Image URL</option>
+  </select>
+
+  <div id="thumbnail-input-container"></div>
+
+  <button type="submit">Upload product</button>
+</form>

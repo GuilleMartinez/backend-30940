@@ -1,0 +1,8 @@
+extends ./layouts/main.pug
+
+block content
+    if haveProducts
+        include ./partials/products_table.pug
+    else 
+        include ./partials/message_card.pug
+        +message("Oops! 😵", "There are no products on database")

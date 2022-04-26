@@ -1,0 +1,16 @@
+{
+  "name": "desafio-5",
+  "version": "1.0.0",
+  "description": "Desafio NodeJS utilizando motor de plantillas EJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Guillermo Martinez",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.17.3",
+    "multer": "^1.4.4"
+  }
+}

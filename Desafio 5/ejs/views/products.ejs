@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/default_head'); -%>
+  </head>
+
+  <body>
+    <%- include('./partials/main_navigation'); -%>
+    <main class="container">
+      <% if (haveProducts) { %> <%- include('./partials/products_table'); -%> <%
+      } else { %> <%- include('./partials/message_card', {title: "Oops! 😵",
+      content: "There are no products on database" }); %> <% } %>
+    </main>
+  </body>
+</html>

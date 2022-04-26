@@ -1,0 +1,16 @@
+form(id="add-product-form", method="POST", action="/productos", enctype="multipart/form-data")
+    label(for="product-title") Title
+    input#product-title(type="text", name="title" required)
+
+    label(for="product-price") Price
+    input#product-price(type="number", name="price" required)
+
+    label(for="thumbnail-selector") Thumbnail Type
+    select#thumbnail-selector(required)
+        option( data-type=""     value="" disabled selected) Choose image type
+        option( data-type="file" value="thumbnail-file") Image File
+        option( data-type="url"  value="thumbnail-url")  Image URL  
+        
+    div#thumbnail-input-container
+
+    button(type="submit") Upload product

@@ -1,0 +1,29 @@
+<table>
+  <caption>
+    Products View
+  </caption>
+
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Thumbnail</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% products.forEach(function(product) { %>
+    <tr>
+      <td><%= product.title %></td>
+      <td><%= product.price %>$</td>
+      <td>
+        <img
+          alt=""
+          style="object-fit: cover; height: 90px; width: 90px"
+          src="<%= product.thumbnail %>"
+        />
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>

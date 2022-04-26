@@ -1,0 +1,14 @@
+table
+    caption Products on database
+    thead
+        tr
+            th(scope="col") Name 
+            th(scope="col") Price
+            th(scope="col") Thumbnail
+    tbody
+        each product in products
+            tr
+                td= product.title 
+                td= product.price + "$" 
+                td
+                    img(src=`${product.thumbnail}`, alt="", style="width: 90px; height: 90px; object-fit: cover")

@@ -1,0 +1,10 @@
+extends ./layouts/main.pug
+
+block content
+    h1 Add a new product into database
+    include ./partials/add_products_form.pug
+
+block scripts
+    script(type="module" src="./src/utils/createThumbnailInput.js")
+    script(type="module" src="./src/utils/thumbnailValidation.js")
+    script(type="module" src="./src/main.js" defer)  
