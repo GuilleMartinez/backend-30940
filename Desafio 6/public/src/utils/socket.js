@@ -15,12 +15,12 @@ socket.on("socket-connected", async ({ products, messages }) => {
 
 socket.on("new-product", async (product) => {
     await renderOneProduct(product);
-    showModal("New product added", product.title, "products-section");
+    showModal("New product added ✅", product.title, "products-section");
 });
 
 socket.on("new-message", async (message) => {
     await renderOneMessage(message);
-    showModal("New message", message.message, "messages-section");
+    showModal("New message! 📨", message.content, "messages-section");
 });
 
 export default socket;

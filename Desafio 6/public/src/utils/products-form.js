@@ -1,17 +1,6 @@
 import { renderOneProduct } from "./render.js";
 import socket from "./socket.js";
 
-const renderOnResponse = async ({ currentTarget: { status, response } }) => {
-    if (status === 200) {
-        const { added } = JSON.parse(response);
-        form.reset();
-        await renderOneProduct(added);
-        socket.emit("product-added", added);
-    } else {
-        console.error(`Error adding product - ${status}.`);
-    }
-};
-
 const createThumbnailInput = (event) => {
     const selectedOption = event.target.querySelector("option:checked");
     const inputContainer = document.getElementById("thumbnail-input-container");
@@ -51,6 +40,18 @@ const addProduct = (event) => {
 
     const renameThumbnailFile = (name) =>
         name.replace(/.+[^.png|.jpg|.jpeg]/, `thumbnail-${Date.now()}`);
+
+    const renderOnResponse = async ({ currentTarget: { status, response } }) => {
+        if (status === 200) {
+            const { added } = JSON.parse(response);
+            form.reset();
+            await renderOneProduct(added);
+            socket.emit("product-added", added);
+        } else {
+            console.error(`Error adding product - ${status}.`);
+        }
+    };
+
     const form = document.getElementById("add-product-form");
     const req = new XMLHttpRequest();
 

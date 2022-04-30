@@ -1,20 +1,22 @@
 import { renderOneMessage } from "./render.js";
 import socket from "./socket.js";
 
-const renderOnResponse = async ({ currentTarget: { status, response } }) => {
-    if (status === 200) {
-        const { added } = JSON.parse(response);
-        await renderOneMessage(added);
-        socket.emit("message-added", added);
-    } else {
-        console.error(`Error sending message - ${status}.`);
-    }
-};
-
 const addMessage = (event) => {
     event.preventDefault();
 
     const getTimestamp = () => moment().format("DD/MM/YYYY DD:MM:SS");
+
+    const renderOnResponse = async ({ currentTarget: { status, response } }) => {
+        if (status === 200) {
+            const { added } = JSON.parse(response);
+            await renderOneMessage(added);
+            socket.emit("message-added", added);
+            document.getElementById("message").value = "";
+        } else {
+            console.error(`Error sending message - ${status}.`);
+        }
+    };
+
     const req = new XMLHttpRequest();
 
     const body = new FormData(event.target);
@@ -23,7 +25,7 @@ const addMessage = (event) => {
 
     const message = {
         author: body.get("author"),
-        message: body.get("message"),
+        content: body.get("message"),
         timestamp: getTimestamp(),
     };
 
