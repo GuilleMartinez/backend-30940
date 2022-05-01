@@ -3,17 +3,14 @@
      <section>
           <h2>Add a new product</h2>
           {{> add_products_form }}
+
+          <section id="products-section"></section>
      </section>
 
      <section id="messages-section" class="container">
           <h2>Chat with someone 😄</h2>
-          {{> add_message_form }}
           <div id="messages-container"></div>
-     </section>
-
-     <section id="products-section">
-          <h2>See our products 😎</h2>
-          <div id="products-container"></div>
+          {{> add_message_form }}
      </section>
 
      <dialog>

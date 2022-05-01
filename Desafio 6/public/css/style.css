@@ -8,9 +8,10 @@
 }
 
 .message-timestamp {
-  color: green;
+  color: brown;
 }
 
 .message-content {
   font-style: italic;
+  color: green;
 }
