@@ -1,0 +1,17 @@
+.message {
+  list-style: none;
+}
+
+.message-author {
+  color: blue;
+  font-weight: bold;
+}
+
+.message-timestamp {
+  color: brown;
+}
+
+.message-content {
+  font-style: italic;
+  color: green;
+}
