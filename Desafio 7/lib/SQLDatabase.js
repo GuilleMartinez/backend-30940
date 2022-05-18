@@ -3,7 +3,7 @@ class SQLDatabase {
     this.database = require("knex")(config);
     this.table = table;
     this.model = model;
-    this.initialize(config);
+    this.initialize();
   }
 
   async initialize() {
