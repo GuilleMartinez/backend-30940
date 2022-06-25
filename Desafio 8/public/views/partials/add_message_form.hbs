@@ -1,0 +1,57 @@
+<form method="POST" action="/messages" id="add-message-form">
+
+  <fieldset>
+
+    <legend>Required Information</legend>
+
+    <div class="grid">
+
+      <label for="email">
+        Email
+        <input type="email" name="email" id="email" value="anne.crawford@example.com" required />
+      </label>
+
+      <label for="name">
+        Name
+        <input type="text" name="name" id="name" value="Anne" required />
+      </label>
+
+      <label for="surname">
+        Surname
+        <input type="text" name="surname" id="surname" value="Crawford" required />
+      </label>
+
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Optional Information</legend>
+
+    <div class="grid">
+
+      <label for="age">
+        Age
+        <input type="number" name="age" id="age" min="18" value="40" />
+      </label>
+
+      <label for="alias">
+        Alias
+        <input type="text" name="alias" id="alias" value="anne" />
+      </label>
+
+      <label for="avatar">
+        Avatar
+        <input type="url" name="avatar" id="avatar" value="https://randomuser.me/api/portraits/women/4.jpg" />
+      </label>
+
+  </fieldset>
+
+  <div class="grid">
+    <label for="message">
+      Your message
+      <textarea id="message" name="message" required></textarea>
+    </label>
+  </div>
+
+  <button type="submit">Send message</button>
+</form>

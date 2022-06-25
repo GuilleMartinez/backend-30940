@@ -1,0 +1,28 @@
+.message {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.message-author-email {
+  color: blue;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.message-author-avatar {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+.message-timestamp {
+  color: brown;
+}
+
+.message-content {
+  font-style: italic;
+  color: green;
+}

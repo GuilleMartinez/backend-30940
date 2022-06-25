@@ -1,0 +1,37 @@
+<main class="container">
+
+     <section>
+          <h2>Add a new product</h2>
+          {{> add_products_form }}
+
+          <section id="products-section"></section>
+     </section>
+
+     <section id="messages-section" class="container">
+          <h2>Chat with someone 😄</h2>
+          <div id="messages-container"></div>
+          {{> add_message_form }}
+     </section>
+
+     <dialog>
+          <article>
+               <h2 id="dialog-title"></h2>
+               <p id="dialog-content"></p>
+               <footer>
+                    <button id="dialog-close-btn" data-scroll-to="">Close</button>
+               </footer>
+          </article>
+     </dialog>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+
+<script type="module" src="./src/utils/products-form.js"></script>
+<script type="module" src="./src/utils/messages-form.js"></script>
+<script type="module" src="./src/utils/render.js"></script>
+<script type="module" src="./src/utils/socket.js"></script>
+
+<script type="module" src="./src/main.js" defer></script>

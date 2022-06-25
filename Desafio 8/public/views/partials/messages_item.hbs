@@ -1,0 +1,9 @@
+<li id="message-{{message.id}}" class="message">
+    <span class="message-author-email">{{message.author.email}}</span>
+    <span>
+        [<time class="message-timestamp" datetime="{{message.timestamp}}">{{message.timestamp}}</time>]:
+        <span class="message-content">{{message.content}}</span>
+    </span>
+
+    <img src="{{message.author.avatar}}" alt="{{message.author.name}}" class="message-author-avatar"/>
+</li>
