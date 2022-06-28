@@ -9,15 +9,13 @@ module.exports = (httpServer, app) => {
     const io = new Server(httpServer);
 
     io.on("connection", async (socket) => {
-        
+
         console.log(`User connected ${socket.id}.`);
 
         const messages = await messagesDB.get();
         const products = await productsDB.get();
-    
-        normalizeMessages(messages);
-        
-        socket.emit("socket-connected", { products, messages });
+
+        socket.emit("socket-connected", { products, messages: normalizeMessages(messages) });
 
         socket.on("product-added", (product) => {
             socket.broadcast.emit("new-product", product);

@@ -22,10 +22,10 @@ const {
 } = require("../controllers/products");
 
 router.get("/", renderProducts);
-router.post("/", upload.single("thumbnail"), addProduct);
+router.get("/test", generateProductsMockup);
 router.get("/:id", findProductById);
+router.post("/", upload.single("thumbnail"), addProduct);
 router.put("/:id", findProductByIdAndUpdate);
 router.delete("/:id", findProductByIdAndRemove);
-router.get("/test", generateProductsMockup);
 
 module.exports = router;

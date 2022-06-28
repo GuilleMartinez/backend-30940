@@ -1,13 +1,27 @@
+:root {
+  --message-height: 100px;
+  --message-width:  200px;
+  --message-container-height: 300px;
+}
+
+.messages-list {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: var(--message-container-height);
+  margin: 0;
+}
+
 .message {
   list-style: none;
   display: flex;
   align-items: center;
+  height: var(--message-height);
+  margin: 0;
 }
 
 .message-author-email {
   color: blue;
   font-weight: bold;
-  margin: 0 5px;
 }
 
 .message-author-avatar {

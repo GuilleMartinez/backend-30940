@@ -38,8 +38,8 @@ const findProductByIdAndUpdate = async (req, res, next) => {
 };
 
 const generateProductsMockup = async (req, res) => {
-  const { cant = 5 } = req.query; 
-  return res.json({ products: generateProducts(cant) });
+  const { cant = 5 } = req.query;
+  return res.json({ products: await generateProducts(cant) });
 }
 
 module.exports = {

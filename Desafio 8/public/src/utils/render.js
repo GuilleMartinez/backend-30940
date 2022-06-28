@@ -1,3 +1,5 @@
+import denormalizeMessage from "./denormalize-messages.js";
+
 const getHandlebarFile = async (file) => {
     const content = await fetch("../views/partials/" + file + ".hbs");
     return await content.text();
@@ -42,13 +44,13 @@ const renderOneProduct = async (product) => {
     }
 };
 
-const renderMessages = async (messages) => {
+const renderMessages = async (chat) => {
     const handlebars = await getHandlebarFile("messages");
+    const { messages } = denormalizeMessage(chat);
     const template = Handlebars.compile(handlebars)({
         messages,
         haveMessages: Boolean(messages.length),
     });
-
     const HTMLContainer = document.createElement("template");
     const HTMLFragment = document.createDocumentFragment();
     const container = document.getElementById("messages-container");
