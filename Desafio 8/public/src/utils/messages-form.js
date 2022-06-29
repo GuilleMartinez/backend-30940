@@ -31,14 +31,12 @@ const addMessage = (event) => {
     },
     content: body.get("message"),
   };
-
-  console.log(message);
-
   req.open(method, url);
+
   req.setRequestHeader("Content-type", "application/json");
   req.addEventListener("load", renderOnResponse);
-
   req.send(JSON.stringify(message));
+
 };
 
 export { addMessage };

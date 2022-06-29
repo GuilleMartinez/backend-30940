@@ -1,4 +1,4 @@
-const { messages: { config, table } } = require("../config/options");
+const { sql: { config, messagesTable } } = require("../config/options");
 
 const model = (table) => {
   table.increments("id").primary();
@@ -9,4 +9,4 @@ const model = (table) => {
 
 const SQLMessages = require("../lib/SQLMessages");
 
-module.exports = new SQLMessages(config, table, model);
+module.exports = new SQLMessages(config, messagesTable, model);

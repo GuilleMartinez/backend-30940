@@ -1,4 +1,4 @@
-const { products: { config, table } } = require("../config/options");
+const { sql: { config, productsTable } } = require("../config/options");
 
 const model = (table) => {
   table.increments("id").primary();
@@ -9,4 +9,4 @@ const model = (table) => {
 
 const SQLProducts = require("../lib/SQLProducts");
 
-module.exports = new SQLProducts(config, table, model);
+module.exports = new SQLProducts(config, productsTable, model);
