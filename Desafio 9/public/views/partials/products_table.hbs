@@ -1,0 +1,21 @@
+<table>
+
+  <caption>
+    Products View
+  </caption>
+
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Thumbnail</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each products }}
+    {{> products_row product=this }}
+    {{/each }}
+  </tbody>
+
+</table>
