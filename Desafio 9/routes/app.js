@@ -10,7 +10,7 @@ const renderLoginPage = require("../utils/render/renderLoginPage");
 
 router.get("/", auth, renderMainPage);
 router.get("/login", renderLoginPage);
-router.get("/logout", destroySession);
+router.get("/logout", auth, destroySession);
 router.post("/login", createSession);
 
 module.exports = router;
