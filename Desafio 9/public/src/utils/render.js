@@ -75,7 +75,7 @@ const renderOneMessage = async (message) => {
 
         list.appendChild(HTMLFragment);
     } catch {
-        await renderMessages([message]);
+        await renderMessages({ messages: [message] });
     }
 };
 
