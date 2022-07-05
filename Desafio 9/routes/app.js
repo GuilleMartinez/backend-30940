@@ -1,5 +1,3 @@
-"use strict";
-
 const { Router } = require("express");
 const router = Router();
 const { createSession, destroySession } = require("../controllers/session");
