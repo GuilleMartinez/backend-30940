@@ -1,6 +1,19 @@
-<div class="container">
-    <div class="center-text">
-        <h2 class="user-title">Welcome {{ name }}! 👋</h2>
-        <a href="/logout" role="button">Log out</a>
+<div class="container center-text">
+
+    <h2>Welcome! 👋</h2>
+
+    <div class="grid">
+
+        <div class="container">
+            <p>You are logged as:
+                <small data-tooltip="{{email}}">{{name}}</small>
+            </p>
+        </div>
+
+        <div class="container">
+            <a href="/logout" role="button">Log out</a>
+        </div>
+
     </div>
+
 </div>

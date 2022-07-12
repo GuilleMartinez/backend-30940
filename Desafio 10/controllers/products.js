@@ -4,13 +4,14 @@ const generateProducts = require("../utils/products/generateProducts");
 
 const renderProducts = async (req, res, next) => {
   const items = await products.get();
-  const { user } = req.session;
+  const { user } = req;
   return res.render("products", {
     layout: "session",
     pageTitle: "Products",
     products: items,
     haveProducts: items.length > 0,
-    user,
+    name: user.name,
+    email: user.email
   });
 };
 
