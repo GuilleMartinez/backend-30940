@@ -38,13 +38,11 @@ connection.once("connected", () => {
   require("./routes/messages")(app);
   require("./routes/test")(app);
 
-  // Configure error handler
-  require("./utils/handlers/errorHanlder")(app);
+
 
   // Launch Server
-  httpServer.listen(port, (error) =>
-    error ? shutdownServer(error) : console.log("Server ready!")
-  );
+  httpServer.listen(port, () => console.log(`Server listening on port: ${port} 👍`));
+
 });
 
 connection.on("error", shutdownServer);

@@ -1,5 +1,4 @@
 class Database {
-  
   initialize() {
     return null;
   }
@@ -23,7 +22,6 @@ class Database {
   async removeOne(id) {
     return null;
   }
-
 }
 
 module.exports = Database;

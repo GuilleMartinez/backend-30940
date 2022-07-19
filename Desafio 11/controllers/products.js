@@ -17,29 +17,27 @@ const renderProducts = async (req, res, next) => {
 const addProduct = async (req, res, next) => {
   const { body, file = null } = req;
   const productAttributes = formatProduct(body, file);
-  const { added, error } = await products.insertOne(productAttributes);
-  return added
-    ? res.status(201).json({ added })
-    : next({ type: "server_error", error });
+  const { added } = await products.insertOne(productAttributes);
+  return added ? res.status(201).json({ added }) : res.sendStatus(400);
 };
 
 const findProductById = async (req, res, next) => {
   const { id } = req.params;
-  const product = await products.findOne(id);
-  return product ? res.json(product) : next({ type: "not_found" });
+  const { finded } = await products.findOne(id);
+  return finded ? res.json({ product: finded }) : res.sendStatus(404);
 };
 
 const findProductByIdAndRemove = async (req, res, next) => {
   const { id } = req.params;
-  const deleted = await products.removeOne(id);
-  return deleted ? res.sendStatus(204) : next({ type: "not_found" });
+  const { deleted } = await products.removeOne(id);
+  return deleted ? res.sendStatus(204) : res.sendStatus(404);
 };
 
 const findProductByIdAndUpdate = async (req, res, next) => {
   const { params: { id }, body, file = null } = req;
   const productAttributes = formatProduct(body, file);
-  const updated = await products.updateOne(id, productAttributes);
-  return updated ? res.sendStatus(204) : next({ type: "not_found" });
+  const { updated } = await products.updateOne(id, productAttributes);
+  return updated ? res.sendStatus(204) : res.sendStatus(404);
 };
 
 const generateProductsMockup = (req, res) => {

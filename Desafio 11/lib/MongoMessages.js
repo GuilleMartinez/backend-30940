@@ -22,20 +22,19 @@ class MongoMessages extends MongoDatabase {
                 .lean(true)
                 .populate("author", "email name avatar")
                 .exec();
-            return { finded, error: null };
-        } catch (error) {
-            return { finded: null, error: error.message };
+            return { finded };
+        } catch {
+            return { finded: null };
         }
     }
 
     async insertOne(attributes) {
         try {
             const { _id } = await this.model.create(attributes);
-            const { finded: added, error } = await this.findOne(_id);
-            if (error) throw new Error(error.message);
-            else return { added, error: null };
-        } catch (error) {
-            return { added: null, error: error.message };
+            const { finded } = await this.findOne(_id);
+            return { added: finded };
+        } catch {
+            return { added: null };
         }
     }
 }

@@ -10,7 +10,7 @@ class MongoUsers extends MongoDatabase {
             const user = await this.model.findOne(attributes).lean(true).exec();
             return { user, error: null };
         } catch (error) {
-            return { user: null, error };
+            return { user: null, error: error.message };
         }
     }
 }

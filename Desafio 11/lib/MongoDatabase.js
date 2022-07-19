@@ -13,36 +13,36 @@ class MongoDatabase extends Database {
   async findOne(id) {
     try {
       const finded = await this.model.findById(id);
-      return { finded, error: null };
-    } catch (error) {
-      return { finded: null, error };
+      return { finded };
+    } catch {
+      return { finded: null };
     }
   }
 
   async insertOne(attributes) {
     try {
       const added = await this.model.create(attributes);
-      return { added, error: null };
-    } catch (error) {
-      return { added: null, error };
+      return { added };
+    } catch {
+      return { added: null };
     }
   }
 
   async removeOne(id) {
     try {
       const deleted = await this.model.findByIdAndRemove(id);
-      return { deleted, error: null };
-    } catch (error) {
-      return { deleted: null, error };
+      return { deleted };
+    } catch {
+      return { deleted: null };
     }
   }
 
   async updateOne(id, attributes) {
     try {
       const updated = await this.model.findByIdAndUpdate(id, attributes);
-      return { updated, error: null };
-    } catch (error) {
-      return { updated: null, error };
+      return { updated };
+    } catch {
+      return { updated: null };
     }
   }
 }

@@ -46,7 +46,7 @@ const renderProcessInformation = (req, res, next) => {
 }
 
 const generateRandomNumbersWithCount = (req, res, next) => {
-    const { cant = 100 } = req.query;
+    const { cant = 100_000_000 } = req.query;
     const { fork } = require("child_process");
     const forked = fork("./utils/handlers/generateRandomNumbersWithCount.js");
 
