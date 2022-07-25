@@ -1,0 +1,61 @@
+:root {
+  --message-height: 100px;
+  --message-width:  200px;
+  --message-container-height: 300px;
+}
+
+.grid {
+  align-items: start;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+article {
+  margin: 1rem 0;
+}
+
+.messages-list {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: var(--message-container-height);
+  margin: 0;
+}
+
+.message {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: var(--message-height);
+  margin: 0;
+}
+
+.message-author-email {
+  color: blue;
+  font-weight: bold;
+}
+
+.message-author-avatar {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+.message-timestamp {
+  color: brown;
+}
+
+.message-content {
+  font-style: italic;
+  color: green;
+}
+
+.user-title {
+  display: inline;
+  margin: 0;
+}
+
+.center-text {
+  text-align: center;
+}
